@@ -3,6 +3,9 @@ import { sass } from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'Scalpel',
+  bundles: [
+    { components: ['scpl-button'] }
+  ],
   plugins: [
     sass()
   ],
@@ -14,5 +17,5 @@ export const config: Config = {
       serviceWorker: null // disable service workers
     }
   ],
-  preamble: '(C) Pinetree Development https://pinetree.dev - Licensed under the MIT License',
+  preamble: '(C) Pinetree Development https://pinetree.dev // Licensed under the MIT License',
 };

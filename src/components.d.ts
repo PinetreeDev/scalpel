@@ -7,60 +7,37 @@
 
 import '@stencil/core';
 
+
+
+
 export namespace Components {
 
-  interface MyComponent {
-    /**
-    * The first name
-    */
-    'first': string;
-    /**
-    * The last name
-    */
-    'last': string;
-    /**
-    * The middle name
-    */
-    'middle': string;
-  }
-  interface MyComponentAttributes extends StencilHTMLAttributes {
-    /**
-    * The first name
-    */
-    'first'?: string;
-    /**
-    * The last name
-    */
-    'last'?: string;
-    /**
-    * The middle name
-    */
-    'middle'?: string;
-  }
+  interface ScplButton {}
+  interface ScplButtonAttributes extends StencilHTMLAttributes {}
 }
 
 declare global {
   interface StencilElementInterfaces {
-    'MyComponent': Components.MyComponent;
+    'ScplButton': Components.ScplButton;
   }
 
   interface StencilIntrinsicElements {
-    'my-component': Components.MyComponentAttributes;
+    'scpl-button': Components.ScplButtonAttributes;
   }
 
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  interface HTMLScplButtonElement extends Components.ScplButton, HTMLStencilElement {}
+  var HTMLScplButtonElement: {
+    prototype: HTMLScplButtonElement;
+    new (): HTMLScplButtonElement;
   };
 
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement
+    'scpl-button': HTMLScplButtonElement
   }
 
   interface ElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'scpl-button': HTMLScplButtonElement;
   }
 
 
