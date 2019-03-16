@@ -1,3 +1,4 @@
+@import "../../themes/scalpel.globals.scss";
 
 .button {
 
@@ -13,8 +14,10 @@
 
     margin: 8pt;
 
-    transition: 0.25s;
+    background: current-color(base);
+    color: current-color(contrast);
 
+    transition: 0.5s;
     box-shadow: 0 3pt 8pt rgba(0, 0, 0, 0.2);
 
     .scpl-button-content {

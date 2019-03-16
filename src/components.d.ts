@@ -7,13 +7,21 @@
 
 import '@stencil/core';
 
-
+import '@ionic/core';
+import 'ionicons';
+import {
+  Color,
+} from '@ionic/core';
 
 
 export namespace Components {
 
-  interface ScplButton {}
-  interface ScplButtonAttributes extends StencilHTMLAttributes {}
+  interface ScplButton {
+    'color'?: Color;
+  }
+  interface ScplButtonAttributes extends StencilHTMLAttributes {
+    'color'?: Color;
+  }
 }
 
 declare global {

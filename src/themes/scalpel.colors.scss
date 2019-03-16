@@ -1,0 +1,254 @@
+// Import Ionic colors
+@import "../../node_modules/@ionic/core/dist/collection/themes/ionic.theme.default";
+
+// Ionic Functions
+@import "node_modules/@ionic/core/dist/collection/themes/ionic.functions.color";
+
+// Bright Colors
+$strawberry:      #ee1122;
+$tangelo:         #ed7623;
+$lemon:           #f6ce3d;
+$lime:            #33cc33;
+$turquoise:       #33cccc;
+$sky:             #66ccff;
+$sapphire:        #1919e2;
+$blueberry:       #490cd3;
+$blackberry:      #9900cc;
+$grape:           #cc33cc;
+$lambo:           #ff99cc;
+
+// Dark Colors
+$redstone:        #b13535;
+$rust:            #b16735;
+$bronze:          #da8812;
+$brass:           #ff9933;
+$jalapeno:        #669933;
+$dusk:            #339999;
+$ocean:           #336699;
+$obsidian:        #663399;
+$eggplant:        #993399;
+$grapefruit:      #cc3366;
+
+// Default generic colors for Scalpel
+$red:             $strawberry;
+$orange:          $tangelo;
+$yellow:          $lemon;
+$green:           $lime;
+$teal:            $turquoise;
+$blue:            $sapphire;
+$indigo:          $blueberry;
+$purple:          $blackberry;
+$magenta:         $grape;
+$pink:            $lambo;
+
+// Declare default color pallete -- needs to be declared last because it references other variables
+$primary:         #f69220;
+$secondary:       #808080;
+$tertiary:        #cccccc;
+$success:         $lime;
+$warning:         $lemon;
+$danger:          $strawberry;
+$light:           #e6e6e6;
+$medium:          #909090;
+$dark:            #222222;
+
+// Based on Default Ionic Colors, https://github.com/ionic-team/ionic/blob/master/core/src/themes/ionic.theme.default.scss#L25-L80
+$colors:  (
+  primary: (
+    base:             $primary,
+    contrast:         #fff
+  ),
+  secondary: (
+    base:             $secondary,
+    contrast:         #fff
+  ),
+  tertiary: (
+    base:             $tertiary,
+    contrast:         #fff
+  ),
+  success: (
+    base:             $success,
+    contrast:         #fff
+  ),
+  warning: (
+    base:             $warning,
+    contrast:         #fff
+  ),
+  danger: (
+    base:             $danger,
+    contrast:         #fff
+  ),
+  light: (
+    base:             $light,
+    contrast:         #000
+  ),
+  medium: (
+    base:             $medium,
+    contrast:         #fff
+  ),
+  dark: (
+    base:             $dark,
+    contrast:         #fff
+  ),
+  strawberry: (
+    base:             $strawberry,
+    contrast:         #fff
+  ),
+  tangelo: (
+    base:             $tangelo,
+    contrast:         #fff
+  ),
+  lemon: (
+    base:             $lemon,
+    contrast:         #fff
+  ),
+  lime: (
+    base:             $lime,
+    contrast:         #fff
+  ),
+  turquoise: (
+    base:             $turquoise,
+    contrast:         #fff
+  ),
+  sky: (
+    base:             $sky,
+    contrast:         #fff
+  ),
+  sapphire: (
+    base:             $sapphire,
+    contrast:         #fff
+  ),
+  blueberry: (
+    base:             $blueberry,
+    contrast:         #fff
+  ),
+  blackberry: (
+    base:             $blackberry,
+    contrast:         #fff
+  ),
+  grape: (
+    base:             $grape,
+    contrast:         #fff
+  ),
+  lambo: (
+    base:             $lambo,
+    contrast:         #fff
+  ),
+  redstone: (
+    base:             $redstone,
+    contrast:         #fff
+  ),
+  rust: (
+    base:             $rust,
+    contrast:         #fff
+  ),
+  bronze: (
+    base:             $bronze,
+    contrast:         #fff
+  ),
+  brass: (
+    base:             $brass,
+    contrast:         #fff
+  ),
+  jalapeno: (
+    base:             $jalapeno,
+    contrast:         #fff
+  ),
+  dusk: (
+    base:             $dusk,
+    contrast:         #fff
+  ),
+  ocean: (
+    base:             $ocean,
+    contrast:         #fff
+  ),
+  obsidian: (
+    base:             $obsidian,
+    contrast:         #fff
+  ),
+  eggplant: (
+    base:             $eggplant,
+    contrast:         #fff
+  ),
+  grapefruit: (
+    base:             $grapefruit,
+    contrast:         #fff
+  ),
+  red: (
+    base:             $red,
+    contrast:         #fff
+  ),
+  orange: (
+    base:             $orange,
+    contrast:         #fff
+  ),
+  yellow: (
+    base:             $yellow,
+    contrast:         #fff
+  ),
+  green: (
+    base:             $green,
+    contrast:         #fff
+  ),
+  teal: (
+    base:             $teal,
+    contrast:         #fff
+  ),
+  blue: (
+    base:             $blue,
+    contrast:         #fff
+  ),
+  indigo: (
+    base:             $indigo,
+    contrast:         #fff
+  ),
+  purple: (
+    base:             $purple,
+    contrast:         #fff
+  ),
+  magenta: (
+    base:             $magenta,
+    contrast:         #fff
+  ),
+  pink: (
+    base:             $pink,
+    contrast:         #fff
+  )
+);
+
+// Ionic Colors
+// --------------------------------------------------
+// Generates the color classes and variables based on the
+// colors map
+// Based on https://github.com/ionic-team/ionic/blob/master/core/src/css/core.scss#L31-L56
+
+@each $color-name, $value in $colors {
+  
+    $value: map-get($colors, $color-name);
+
+    $base: map-get($value, base);
+    $contrast: map-get($value, contrast);
+
+    .ion-color {
+        
+        --ion-color-#{$color-name}: #{$base} !important;
+        --ion-color-#{$color-name}-rgb: #{color-to-rgb-list($base)} !important;
+        --ion-color-#{$color-name}-contrast: #{$contrast} !important;
+        --ion-color-#{$color-name}-contrast-rgb: #{color-to-rgb-list($contrast)} !important;
+        --ion-color-#{$color-name}-shade: #{get-color-shade($base)} !important;
+        --ion-color-#{$color-name}-tint: #{get-color-tint($base)} !important;
+        
+    }
+    
+    .ion-color-#{$color-name} {
+
+        --ion-color-base: var(--ion-color-#{$color-name}, #{$base}) !important;
+        --ion-color-base-rgb: var(--ion-color-#{$color-name}-rgb, #{color-to-rgb-list($base)}) !important;
+        --ion-color-contrast: var(--ion-color-#{$color-name}-contrast, #{$contrast}) !important;
+        --ion-color-contrast-rgb: var(--ion-color-#{$color-name}-contrast-rgb, #{color-to-rgb-list($contrast)}) !important;
+        --ion-color-shade: var(--ion-color-#{$color-name}-shade, #{get-color-shade($base)}) !important;
+        --ion-color-tint: var(--ion-color-#{$color-name}-tint, #{get-color-tint($base)}) !important;
+  
+    }
+  
+}

@@ -3,6 +3,7 @@ import { sass } from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'Scalpel',
+  globalStyle: 'src/themes/scalpel.globals.scss',
   bundles: [
     { components: ['scpl-button'] }
   ],
