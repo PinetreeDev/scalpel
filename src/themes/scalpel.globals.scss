@@ -1,3 +1,10 @@
 
 // Theme Colors
 @import "./scalpel.colors";
+
+// Font
+@import url('https://fonts.googleapis.com/css?family=Questrial');
+
+* {
+    font-family: 'Questrial', 'Segoe UI Emoji', sans-serif;
+}

@@ -5,13 +5,13 @@ import { createColorClasses } from '@ionic/core/dist/collection/utils/theme';
 import { createTypeClasses } from '../../utils/utils';
 
 @Component({
-  tag: 'scpl-button',
-  styleUrl: 'button.scss',
+  tag: 'scpl-card',
+  styleUrl: 'card.scss',
   shadow: true
 })
-export class Button {
+export class Card {
 
-  @Prop() color?: Color;
+  @Prop() color: Color;
 
   @Prop() type: string = 'opaque'; // Opaque, Frosted, Transparent, Outline
 
@@ -19,9 +19,15 @@ export class Button {
     return (
       <div class={createTypeClasses(this.type)}>
         <div class={createColorClasses(this.color)}>
-          <div class="button">
-            <div class="button-content">
+          <div class="card">
+            <div class="card-start">
+              <slot name="start"></slot>
+            </div>
+            <div class="card-body">
               <slot></slot>
+            </div>
+            <div class="card-end">
+              <slot name="end"></slot>
             </div>
           </div>
         </div>

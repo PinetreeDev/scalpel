@@ -18,19 +18,32 @@ export namespace Components {
 
   interface ScplButton {
     'color'?: Color;
+    'type': string;
   }
   interface ScplButtonAttributes extends StencilHTMLAttributes {
     'color'?: Color;
+    'type'?: string;
+  }
+
+  interface ScplCard {
+    'color': Color;
+    'type': string;
+  }
+  interface ScplCardAttributes extends StencilHTMLAttributes {
+    'color'?: Color;
+    'type'?: string;
   }
 }
 
 declare global {
   interface StencilElementInterfaces {
     'ScplButton': Components.ScplButton;
+    'ScplCard': Components.ScplCard;
   }
 
   interface StencilIntrinsicElements {
     'scpl-button': Components.ScplButtonAttributes;
+    'scpl-card': Components.ScplCardAttributes;
   }
 
 
@@ -40,12 +53,20 @@ declare global {
     new (): HTMLScplButtonElement;
   };
 
+  interface HTMLScplCardElement extends Components.ScplCard, HTMLStencilElement {}
+  var HTMLScplCardElement: {
+    prototype: HTMLScplCardElement;
+    new (): HTMLScplCardElement;
+  };
+
   interface HTMLElementTagNameMap {
     'scpl-button': HTMLScplButtonElement
+    'scpl-card': HTMLScplCardElement
   }
 
   interface ElementTagNameMap {
     'scpl-button': HTMLScplButtonElement;
+    'scpl-card': HTMLScplCardElement;
   }
 
 

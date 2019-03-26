@@ -1,41 +1,62 @@
 @import "../../themes/scalpel.globals.scss";
 
-.button {
+.card {
+
+    min-width: 80pt;
+    max-width: 360pt; // 240pt
+
+    margin: 8pt;
+    padding: 16pt;
 
     display: flex;
     flex-direction: column;
     text-align: center;
     justify-content: center;
+    
+    // For background images
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-attachment: local;
 
-    min-height: 8pt;
-    height: 32pt;
-    min-width: 8pt;
-    width: 128pt;
-
-    margin: 8pt;
+    overflow: hidden;
 
     transition: 0.5s;
     box-shadow: 0 3pt 8pt rgba(0, 0, 0, 0.2);
 
-    .button-content {
+    .card-start {
+    
+        justify-self: flex-start;
+    
+    }
+    
+    .card-body {
 
-        margin: auto;
-
+        justify-self: center;
+        text-align: left;
+    
+    }
+    
+    .card-end {
+    
+        justify-self: flex-end;
+    
     }
 
 }
 
-.button:hover {
+.card:hover {
     box-shadow: 0 6pt 16pt rgba(0, 0, 0, 0.2);
 }
 
 .scpl-type-opaque {
 
-    .button {
+    .card {
         background-color: #fff;
     }
 
-    .ion-color .button {
+    .ion-color .card {
         background: current-color(base);
         color: current-color(contrast);
     }
@@ -44,12 +65,12 @@
 
 .scpl-type-frosted {
 
-    .button {
+    .card {
         backdrop-filter: blur(32pt); // https://bugzilla.mozilla.org/show_bug.cgi?id=1178765
         background: rgba(255, 255, 255, 0.25);
     }
 
-    .ion-color .button {
+    .ion-color .card {
         background: rgba(current-color(base-rgb), 0.25);
         color: current-color(contrast);
     }
@@ -58,11 +79,11 @@
 
 .scpl-type-transparent {
 
-    .button {
+    .card {
         box-shadow: none;
     }
 
-    .ion-color .button {
+    .ion-color .card {
         color: current-color(base);
     }
 
@@ -72,16 +93,16 @@
 
     text-shadow: 0 3pt 8pt rgba(0, 0, 0, 0.2);
 
-    .button {
+    .card {
         border: 1pt solid #000;
     }
 
-    .ion-color .button {
+    .ion-color .card {
         border: 1pt solid current-color(base);
         color: current-color(base);
     }
 
-    .button:hover {
+    .card:hover {
         text-shadow: 0 6pt 16pt rgba(0, 0, 0, 0.2);
     }
 
