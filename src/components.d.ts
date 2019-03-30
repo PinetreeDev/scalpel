@@ -33,17 +33,28 @@ export namespace Components {
     'color'?: Color;
     'type'?: string;
   }
+
+  interface ScplSection {
+    'color': Color;
+    'type': string;
+  }
+  interface ScplSectionAttributes extends StencilHTMLAttributes {
+    'color'?: Color;
+    'type'?: string;
+  }
 }
 
 declare global {
   interface StencilElementInterfaces {
     'ScplButton': Components.ScplButton;
     'ScplCard': Components.ScplCard;
+    'ScplSection': Components.ScplSection;
   }
 
   interface StencilIntrinsicElements {
     'scpl-button': Components.ScplButtonAttributes;
     'scpl-card': Components.ScplCardAttributes;
+    'scpl-section': Components.ScplSectionAttributes;
   }
 
 
@@ -59,14 +70,22 @@ declare global {
     new (): HTMLScplCardElement;
   };
 
+  interface HTMLScplSectionElement extends Components.ScplSection, HTMLStencilElement {}
+  var HTMLScplSectionElement: {
+    prototype: HTMLScplSectionElement;
+    new (): HTMLScplSectionElement;
+  };
+
   interface HTMLElementTagNameMap {
     'scpl-button': HTMLScplButtonElement
     'scpl-card': HTMLScplCardElement
+    'scpl-section': HTMLScplSectionElement
   }
 
   interface ElementTagNameMap {
     'scpl-button': HTMLScplButtonElement;
     'scpl-card': HTMLScplCardElement;
+    'scpl-section': HTMLScplSectionElement;
   }
 
 

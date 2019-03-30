@@ -13,6 +13,13 @@
     width: 128pt;
 
     margin: 8pt;
+    
+    // For background images
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-attachment: local;
 
     transition: 0.5s;
     box-shadow: 0 3pt 8pt rgba(0, 0, 0, 0.2);

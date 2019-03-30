@@ -6,7 +6,8 @@ export const config: Config = {
   globalStyle: 'src/themes/scalpel.globals.scss',
   bundles: [
     { components: ['scpl-button'] },
-    { components: ['scpl-card'] }
+    { components: ['scpl-card'] },
+    { components: ['scpl-section'] }
   ],
   plugins: [
     sass()

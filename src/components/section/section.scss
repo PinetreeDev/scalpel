@@ -1,15 +1,16 @@
 @import "../../themes/scalpel.globals.scss";
 
-.card {
+.section {
 
-    min-width: 80pt;
-    max-width: 360pt; // 240pt
+    width: 100%;
+    min-height: 100vh;
 
-    margin: 8pt;
-    padding: 16pt;
+    margin: 0;
+    padding: 0;
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     text-align: center;
     justify-content: center;
     
@@ -25,40 +26,53 @@
     transition: 0.5s;
     box-shadow: 0 3pt 8pt rgba(0, 0, 0, 0.2);
 
-    .card-start {
-    
-        justify-self: flex-start;
-        margin: 0 auto auto auto;
-    
-    }
-    
-    .card-body {
+    .section-align-vert {
 
-        justify-self: center;
-        text-align: left;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+
+        .section-start {
+        
+            width: 30%;
+            min-width: 240pt;
+            padding: 8pt;
+        
+        }
+        
+        .section-body {
     
-    }
+            text-align: left;
+            width: 90%;
+            max-width: 480pt;
+            padding: 8pt;
+        
+        }
+        
+        .section-end {
+        
+            width: 30%;
+            min-width: 240pt;
+            padding: 8pt;
     
-    .card-end {
-    
-        justify-self: flex-end;
-        margin: auto auto 0 auto;
-    
+        }
+
     }
 
 }
 
-.card:hover {
+.section:hover {
     box-shadow: 0 6pt 16pt rgba(0, 0, 0, 0.2);
 }
 
 .scpl-type-opaque {
 
-    .card {
+    .section {
         background-color: #fff;
     }
 
-    .ion-color .card {
+    .ion-color .section {
         background: current-color(base);
         color: current-color(contrast);
     }
@@ -67,12 +81,12 @@
 
 .scpl-type-frosted {
 
-    .card {
+    .section {
         backdrop-filter: blur(32pt); // https://bugzilla.mozilla.org/show_bug.cgi?id=1178765
         background: rgba(255, 255, 255, 0.25);
     }
 
-    .ion-color .card {
+    .ion-color .section {
         background: rgba(current-color(base-rgb), 0.25);
         color: current-color(contrast);
     }
@@ -81,11 +95,11 @@
 
 .scpl-type-transparent {
 
-    .card {
+    .section {
         box-shadow: none;
     }
 
-    .ion-color .card {
+    .ion-color .section {
         color: current-color(base);
     }
 
@@ -95,16 +109,16 @@
 
     text-shadow: 0 3pt 8pt rgba(0, 0, 0, 0.2);
 
-    .card {
+    .section {
         border: 1pt solid #000;
     }
 
-    .ion-color .card {
+    .ion-color .section {
         border: 1pt solid current-color(base);
         color: current-color(base);
     }
 
-    .card:hover {
+    .section:hover {
         text-shadow: 0 6pt 16pt rgba(0, 0, 0, 0.2);
     }
 
